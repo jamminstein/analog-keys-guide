@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analog Keys — First Hour (Phone)</title>
+  <style>
+    :root {
+      --bg1: #0b1020;
+      --bg2: #18213f;
+      --card: rgba(255, 255, 255, 0.06);
+      --stroke: rgba(255, 255, 255, 0.16);
+      --text: #f3f7ff;
+      --muted: #b4c0d7;
+      --accent: #ff8c4a;
+      --accent2: #3ee0a8;
+      --good: #57f0ba;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Montserrat', 'Avenir Next', 'Trebuchet MS', 'Segoe UI', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      background: radial-gradient(circle at 10% 0%, #2a3a72 0%, transparent 34%),
+                  radial-gradient(circle at 90% 0%, #2d6b5b 0%, transparent 32%),
+                  linear-gradient(155deg, var(--bg1), var(--bg2));
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      display: grid;
+      gap: 16px;
+    }
+
+    .header {
+      background: var(--card);
+      border: 1px solid var(--stroke);
+      border-radius: 18px;
+      padding: 16px;
+      backdrop-filter: blur(8px);
+    }
+
+    .title {
+      font-size: 1.3rem;
+      margin: 0 0 6px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.45;
+    }
+
+    .pill {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      background: rgba(62, 224, 168, 0.16);
+      color: #d6ffef;
+      border: 1px solid rgba(62, 224, 168, 0.44);
+    }
+
+    .step {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--stroke);
+      border-radius: 18px;
+      padding: 14px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .step h2 {
+      margin: 0;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ffffff;
+    }
+
+    .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background: var(--accent);
+      color: #2a1b0f;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .step ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .step li {
+      margin: 8px 0;
+      font-size: 1rem;
+      position: relative;
+    }
+
+    .key {
+      font-weight: 700;
+      color: #ffd9a9;
+      background: rgba(255, 140, 74, 0.14);
+      border: 1px solid rgba(255, 140, 74, 0.5);
+      padding: 1px 7px;
+      border-radius: 8px;
+      white-space: nowrap;
+      font-size: 0.95rem;
+    }
+
+    .mini {
+      margin: 14px 0 0;
+      padding: 10px;
+      border-radius: 12px;
+      background: rgba(14, 19, 34, 0.55);
+      border-left: 4px solid var(--accent2);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .mini strong {
+      color: #d5fff0;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .btnRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btnTag {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 0.83rem;
+      color: #eaf3ff;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      padding: 0 4px 8px;
+    }
+
+    @media (max-width: 420px) {
+      body {
+        padding: 12px;
+      }
+
+      .step h2 {
+        font-size: 1.07rem;
+      }
+
+      .step li,
+      .btnTag,
+      .subtitle,
+      .mini {
+        font-size: 0.98rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Analog Keys: First Jam</h1>
+      <p class="subtitle">Follow in order.</p>
+    </header>
+
+    <section class="step">
+      <h2><span class="num">1</span> Play</h2>
+      <ul>
+        <li>Choose: <span class="key">BANK</span> + <span class="key">TRIG 1-16</span>.</li>
+        <li>Press <span class="key">PLAY</span>.</li>
+      </ul>
+    </section>
+
+    <section class="step">
+      <h2><span class="num">2</span> Tweak</h2>
+      <ul>
+        <li>Select <span class="key">TRACK 1</span>.</li>
+        <li>Press <span class="key">FILTERS</span>.</li>
+        <li>Turn <span class="key">FRQ</span>.</li>
+      </ul>
+    </section>
+
+    <section class="step">
+      <h2><span class="num">3</span> Make a Beat</h2>
+      <ul>
+        <li>Press <span class="key">REC</span>.</li>
+        <li>Press trigs <span class="key">1, 5, 9, 13</span>.</li>
+        <li>Press <span class="key">PLAY</span>.</li>
+      </ul>
+    </section>
+
+    <section class="step">
+      <h2><span class="num">4</span> Change One Step</h2>
+      <ul>
+        <li>Hold one <span class="key">TRIG</span>.</li>
+        <li>Turn <span class="key">FRQ</span>.</li>
+        <li>Release it and listen.</li>
+      </ul>
+    </section>
+
+    <section class="step">
+      <h2><span class="num">5</span> Record Live</h2>
+      <ul>
+        <li>Hold <span class="key">REC</span> + press <span class="key">PLAY</span>.</li>
+        <li>Play the keyboard.</li>
+        <li>Press <span class="key">PLAY</span> to exit recording.</li>
+      </ul>
+    </section>
+
+    <section class="step">
+      <h2><span class="num">6</span> Save</h2>
+      <ul>
+        <li><span class="key">YES/SAVE</span> + <span class="key">PATTERN</span>.</li>
+      </ul>
+    </section>
+
+    <div class="footer">Play. Tweak. Save.</div>
+  </div>
+</body>
+</html>
